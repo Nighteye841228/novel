@@ -12,7 +12,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>body{background-color: tomato;}</style>
 </head>
 <body>
     <div id="app">
@@ -28,7 +27,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        @yield('menu')
+                        @auth
+                            @include('menu.admin')
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
